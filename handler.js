@@ -1,14 +1,20 @@
-'use strict';
+const parsePage = require("./src/parser");
+const getPage = require("./src/data");
+const URLS = require("./src/urls");
 
-module.exports.hello = async (event) => {
+module.exports.hello = async event => {
+  const html = await getPage(URLS.NL);
+  const links = parsePage(html);
+
   return {
     statusCode: 200,
-    body: JSON.stringify({
-      message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: event,
-    }, null, 2),
+    body: JSON.stringify(
+      {
+        message: links,
+        input: event
+      },
+      null,
+      2
+    )
   };
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
 };
