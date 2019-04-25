@@ -1,7 +1,7 @@
 {
   "name": "travel-pirates-error-fare-text-alert",
   "version": "1.0.0",
-  "engine": {
+  "engines": {
     "node": "8.10"
   },
   "description": "",
@@ -20,7 +20,11 @@
     "url": "https://github.com/rishispeets/travel-pirates-error-fare-text-alert/issues"
   },
   "homepage": "https://github.com/rishispeets/travel-pirates-error-fare-text-alert#readme",
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.18.0",
+    "htmlparser2": "^3.10.1",
+    "twilio": "^3.30.2"
+  },
   "devDependencies": {
     "eslint": "^5.3.0",
     "eslint-config-airbnb-base": "^13.1.0",
@@ -28,6 +32,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-prettier": "^3.0.1",
+    "jest": "^24.7.1",
     "prettier": "1.17.0"
   }
 }
