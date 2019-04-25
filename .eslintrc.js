@@ -17,5 +17,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2018
   },
-  rules: {}
+  rules: {
+    "no-use-before-define": 0
+  }
 };
