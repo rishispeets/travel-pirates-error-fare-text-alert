@@ -2,6 +2,7 @@ const htmlparser = require("htmlparser2");
 const { isTargetLink } = require("./utils");
 
 module.exports = function parsePage(html) {
+  if (!html || typeof html !== "string") throw new Error("Provide valid html.");
   const links = new Set();
 
   const parser = createParser(addLinkTo(links));
@@ -19,7 +20,7 @@ function createParser(onOpenTagHandler) {
 
 function parse(parser, html) {
   parser.write(html);
-  parse.end();
+  parser.end();
 }
 
 function addLinkTo(links) {
