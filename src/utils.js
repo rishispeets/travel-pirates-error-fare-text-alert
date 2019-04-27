@@ -1,8 +1,8 @@
-module.exports.isTargetLink = function isTargetLink(name, attribs) {
-  return isCharA(name) && hasHref(attribs) && isErrorFare(attribs.href);
+module.exports.isErrorFareLink = function isErrorFareLink(name, attribs) {
+  return isCharA(name) && hasHref(attribs) && containsErrorFare(attribs.href);
 };
 
-function isErrorFare(s) {
+function containsErrorFare(s) {
   return s.includes("error-fare");
 }
 
